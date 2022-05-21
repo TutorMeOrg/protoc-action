@@ -62,7 +62,7 @@ export async function getDartPlugin(version: string) {
 async function installDartPluginTool(name: string, version: string) {
   const pubCache = generateTempPath();
   process.env['PUB_CACHE'] = pubCache;
-  child_process.execSync('pub global activate protoc_plugin', { stdio: 'inherit', encoding: 'utf-8' });
+  child_process.execSync('flutter pub global activate protoc_plugin', { stdio: 'inherit', encoding: 'utf-8' });
   return await tc.cacheDir(pubCache, name, version);
 }
 
